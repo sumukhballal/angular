@@ -1,0 +1,40 @@
+
+<div class="container" fxLayout="column" fxLayoutGap="10px">
+  
+  
+  <h1 class="align">DISHES</h1>
+  <div fxFlex>
+    <div>
+      <h3>Menu</h3>
+      <hr>
+    </div>
+  </div>
+
+  <mat-grid-list cols="2" rowHeight="200px" fxFlex>
+      <mat-grid-tile *ngFor="let dish of dishes">
+          <img  height="200px" src="{{dish.image}}" alt={{dish.name}}>
+          <mat-grid-tile-header>{{dish.id}}.{{dish.name | uppercase}}</mat-grid-tile-header>
+        </mat-grid-tile>
+    </mat-grid-list>
+  
+    <div fxFlex *ngIf="selectedDish">
+      
+        <mat-card>
+            <hr>
+          <mat-card-header> 
+            <mat-card-title><h3>{{selectedDish.name | uppercase}}</h3></mat-card-title>
+          </mat-card-header>
+          <hr>
+          <img  height="200px" width="200px" src="{{selectedDish.image}}" alt="{{selectedDish.name}}">
+          <mat-card-content> 
+            <p>{{selectedDish.description}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+              <button mat-raised-button color="primary">LIKE</button>
+              <button mat-raised-button color="primary">SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+    </div>
+    
+
+</div>

@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import {  MatToolbarModule } from '@angular/material';
+import { MatButtonModule, MatCardModule, MatToolbarModule, MatListModule, MatGridListModule, MatLineModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -10,12 +10,14 @@ import 'hammerjs';
 
 
 import { AppComponent } from './app.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 
 @NgModule({
   declarations:[
-    AppComponent
+    AppComponent,
+    MenuComponent
   ],
   imports:[
     BrowserModule,
@@ -23,7 +25,12 @@ import { AppComponent } from './app.component';
     HttpModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    FlexLayoutModule
+    MatListModule,
+    MatLineModule,
+    FlexLayoutModule,
+    MatGridListModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers:[],
   bootstrap:[AppComponent]
