@@ -15,7 +15,7 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
-
+import { DishService } from './services/dish.service';
 
 @NgModule({
   declarations:[
@@ -37,7 +37,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
     MatButtonModule,
     MatCommonModule
   ],
-  providers:[],
+  providers:[DishService], //angulars DI, will create dishservice wherever required.
   bootstrap:[AppComponent]
 })
 export class AppModule { }
