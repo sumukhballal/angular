@@ -1,0 +1,64 @@
+<div class="container"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around center"
+    fxLayoutGap="10px" 
+    fxLayoutGap.xs="0">
+
+  <div fxFlex="40">
+    <div fxFlex *ngIf="dish">
+      
+        <mat-card>
+            <hr>
+          <mat-card-header> 
+            <mat-card-title><h3>{{dish.name | uppercase}}</h3></mat-card-title>
+          </mat-card-header>
+          <hr>
+          <img  height="200px" width="200px" src="{{dish.image}}" alt="{{dish.name}}">
+          <mat-card-content> 
+            <p>{{dish.description}}</p>
+          </mat-card-content>
+          <mat-card-actions>
+              <button mat-raised-button color="primary">LIKE</button>
+              <button mat-raised-button color="primary">SHARE</button>
+          </mat-card-actions>
+        </mat-card>
+    </div>
+  </div>
+
+  <div fxFlex="40">
+      
+      
+      <div fxFlex *ngIf="dish">
+      <mat-list>
+          <h2>Comments</h2>
+        <mat-list-item *ngFor="let dishs of dish.comments">
+          
+          <h2 matLine>{{dishs.comment}}</h2>
+          <h4 matLine> {{dishs.rating}} Stars</h4>
+          <hr matLine>
+          <h5 matLine>-- {{dishs.author}} {{dishs.date | date}} </h5>
+        <hr matLine>
+        </mat-list-item>
+      </mat-list>
+         
+    </div>
+  </div>   
+                     
+           <!--   <mat-card-header> 
+              <mat-card-title><h3>{{dishcom.comments[0].comment}}</h3></mat-card-title>
+            </mat-card-header>
+            <mat-card-content> 
+              <p>{{dishecom.comments[0].rating}}stars</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-raised-button color="primary">LIKE</button>
+                <button mat-raised-button color="primary">SHARE</button>
+            </mat-card-actions>
+          </mat-card>
+      </div>
+    </div>
+  </div>
+-->
+</div>
