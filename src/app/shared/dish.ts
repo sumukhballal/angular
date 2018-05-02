@@ -6,6 +6,7 @@ export class Dish {
     name: string;
     description: string;
     image: string;
+    featured: boolean;
     category: string;
     price: string;
     label: string;

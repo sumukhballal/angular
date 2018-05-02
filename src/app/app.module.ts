@@ -21,8 +21,10 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
 import { DishService } from './services/dish.service';
+import { PromotionService } from './services/promotion.service';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
+
 
 @NgModule({
   declarations:[
@@ -50,7 +52,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     MatCommonModule,
     AppRoutingModule
   ],
-  providers:[DishService], //angulars DI, will create dishservice wherever required.
+  providers:[DishService,PromotionService], //angulars DI, will create dishservice wherever required.
   bootstrap:[AppComponent]
 })
 export class AppModule { }
