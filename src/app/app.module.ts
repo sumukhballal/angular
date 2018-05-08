@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-import { MatButtonModule, MatCardModule, MatToolbarModule, MatListModule, MatGridListModule, MatLineModule} from '@angular/material';
+import { MatButtonModule, MatCardModule, MatToolbarModule, MatListModule, MatGridListModule, MatLineModule, MatDialogModule, MatFormField, MatFormFieldModule, MatCheckboxModule ,MatInputModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DatePipe } from '@angular/common';
@@ -22,8 +22,10 @@ import { ContactComponent } from './contact/contact.component';
 
 import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
+import { LeaderService } from './services/leader.service';
 
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports:[
     BrowserModule,
@@ -50,9 +53,15 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     MatCardModule,
     MatButtonModule,
     MatCommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule,
+    MatInputModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatCheckboxModule
   ],
-  providers:[DishService,PromotionService], //angulars DI, will create dishservice wherever required.
+  entryComponents: [LoginComponent],
+  providers:[DishService,PromotionService,LeaderService], //angulars DI, will create dishservice wherever required.
   bootstrap:[AppComponent]
 })
 export class AppModule { }
